@@ -1,0 +1,12 @@
+{
+  "ingredientPattern": "WS",
+  "ingredients": {
+    "W": { "type": "block", "code": "game:chest-east", "attributes": { "type": "normal-generic" } },
+    "S": { "type": "item", "code": "game:saw-*", "isTool": true }
+  },
+  "recipeGroup": 3,
+  "width": 1,
+  "height": 2,
+  "shapeless": true,
+  "output": { "type": "item", "code": "game:plank-oak", "quantity": 8 }
+}

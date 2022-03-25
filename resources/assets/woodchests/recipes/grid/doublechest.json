@@ -1,0 +1,24 @@
+[
+  {
+    "ingredientPattern": "__P,PPP",
+    "ingredients": {
+      "P": { "type": "item", "code": "game:plank-*", "quantity": 4, "name": "wood" }
+    },
+    "recipeGroup": 1,
+    "width": 3,
+    "height": 2,
+    "output": { "type": "block", "code": "wtrunk-east", "attributes": { "type": "{wood}" } }
+  },
+  {
+    "ingredientPattern": "WW",
+    "ingredients": {
+      "W": { "type": "block", "code": "wchest-east" }
+    },
+    "recipeGroup": 2,
+    "width": 2,
+    "height": 1,
+    "shapeless": true,
+    "copyAttributesFrom": "W",
+    "output": { "type": "block", "code": "wtrunk-east" }
+  }
+]
