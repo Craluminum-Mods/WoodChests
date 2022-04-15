@@ -21,7 +21,8 @@
           "a",
           "-tzip",
           "${env:VINTAGE_STORY_DATA}\\Mods\\${workspaceFolderBasename}-v1.0.3.zip",
-          ".\\resources\\*"
+          ".\\resources\\*",
+          ".\\license",
       ],
       "presentation": {
         "reveal": "silent"
