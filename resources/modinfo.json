@@ -2,7 +2,14 @@
   "type": "content",
   "modid": "woodchests",
   "name": "Wood Chests",
-  "authors": ["Craluminum2413", "Aledark", "Antaro", "Epihnea", "Julius van Vern", "Raccoon"],
+  "authors": [
+    "Craluminum2413",
+    "Aledark",
+    "Antaro",
+    "Epihnea",
+    "Julius van Vern",
+    "Raccoon"
+  ],
   "version": "1.0.3",
   "dependencies": {
     "game": "1.16.0"
