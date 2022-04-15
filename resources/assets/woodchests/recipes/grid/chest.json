@@ -1,9 +1,9 @@
 {
-  "ingredientPattern": "WWW,W_W,WWW",
+  "ingredientPattern": "_W,WW,_W",
   "ingredients": {
-    "W": { "type": "item", "code": "game:plank-*", "name": "wood" }
+    "W": { "type": "item", "code": "game:plank-*", "name": "wood", "quantity": 2 }
   },
-  "width": 3,
+  "width": 2,
   "height": 3,
   "output": { "type": "block", "code": "wchest-east", "attributes": { "type": "{wood}" } }
 }
