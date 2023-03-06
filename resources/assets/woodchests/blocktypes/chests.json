@@ -101,19 +101,19 @@
             "walnut": false
         },
         "shape": {
-            "acacia": "woodchests:block/chest/normal-0",
-            "aged": "woodchests:block/chest/normal-1",
-            "baldcypress": "woodchests:block/chest/normal-2",
-            "birch": "woodchests:block/chest/normal-3",
-            "ebony": "woodchests:block/chest/normal-4",
-            "kapok": "woodchests:block/chest/normal-5",
-            "larch": "woodchests:block/chest/normal-6",
-            "maple": "woodchests:block/chest/normal-7",
-            "oak": "woodchests:block/chest/normal-8",
-            "pine": "woodchests:block/chest/normal-9",
-            "purpleheart": "woodchests:block/chest/normal-10",
-            "redwood": "woodchests:block/chest/normal-11",
-            "walnut": "woodchests:block/chest/normal-12"
+            "acacia": "game:block/wood/chest/normal",
+            "aged": "game:block/wood/chest/normal",
+            "baldcypress": "game:block/wood/chest/normal",
+            "birch": "game:block/wood/chest/normal",
+            "ebony": "game:block/wood/chest/normal",
+            "kapok": "game:block/wood/chest/normal",
+            "larch": "game:block/wood/chest/normal",
+            "maple": "game:block/wood/chest/normal",
+            "oak": "game:block/wood/chest/normal",
+            "pine": "game:block/wood/chest/normal",
+            "purpleheart": "game:block/wood/chest/normal",
+            "redwood": "game:block/wood/chest/normal",
+            "walnut": "game:block/wood/chest/normal"
         },
         "typedOpenSound": {
             "acacia": "game:sounds/block/largechestopen",
