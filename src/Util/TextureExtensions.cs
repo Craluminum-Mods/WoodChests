@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Vintagestory.API.Client;
@@ -36,7 +35,7 @@ public static class TextureExtensions
     /// </summary>
     /// <param name="textures">Block.Textures</param>
     /// <param name="types">from Attributes</param>
-    public static void GenerateTexturesForLabeledChest(ref IDictionary<string, CompositeTexture> textures, List<string> types, ICoreAPI api)
+    public static void GenerateTexturesForLabeledChest(ref IDictionary<string, CompositeTexture> textures, List<string> types)
     {
         var textureList = textures.ToDictionary(x => x.Key, y => y.Value).ToList();
 

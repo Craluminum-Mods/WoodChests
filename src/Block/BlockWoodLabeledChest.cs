@@ -1,4 +1,3 @@
-using System;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
@@ -19,7 +18,7 @@ namespace WoodChests
                 return;
             }
 
-            GenerateTexturesForLabeledChest(ref Textures, types, api);
+            GenerateTexturesForLabeledChest(ref Textures, types);
             base.OnCollectTextures(api, textureDict);
         }
 

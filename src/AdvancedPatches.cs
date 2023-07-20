@@ -1,7 +1,6 @@
 using System.Linq;
 using Vintagestory.API.Common;
 using Vintagestory.API.Util;
-using Vintagestory.ServerMods;
 
 namespace WoodChests;
 
