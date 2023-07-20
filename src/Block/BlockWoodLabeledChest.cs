@@ -1,13 +1,28 @@
+using System;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
+using static WoodChests.TextureExtensions;
 
 namespace WoodChests
 {
     class BlockWoodLabeledChest : BlockGenericTypedContainer
     {
+        public override void OnCollectTextures(ICoreAPI api, ITextureLocationDictionary textureDict)
+        {
+            var types = this.GetTypes();
+            if (types == null)
+            {
+                base.OnCollectTextures(api, textureDict);
+                return;
+            }
+
+            GenerateTexturesForLabeledChest(ref Textures, types, api);
+            base.OnCollectTextures(api, textureDict);
+        }
+
         public override string GetHeldItemName(ItemStack itemStack)
         {
             return GetName(itemStack.Attributes.GetString("type"));
@@ -26,7 +41,7 @@ namespace WoodChests
         {
             var types = type.Split('-');
             var part1 = Lang.Get($"material-{types[0]}");
-            var part2 = Lang.Get($"material-{types[1]}");
+            var part2 = types.Length == 1 ? null : Lang.Get($"material-{types[1]}");
             var chest = Lang.GetMatching("game:block-normal-labeled-labeledchest-*");
             return string.Format($"{chest} ({part1}) ({part2})");
         }
