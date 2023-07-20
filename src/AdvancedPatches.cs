@@ -1,28 +1,20 @@
-using System.Linq;
 using Vintagestory.API.Common;
-using Vintagestory.API.Util;
 
 namespace WoodChests;
 
 public class AdvancedPatches : ModSystem
 {
-    public int IteratedTimes { get; set; }
     public ChestPatch CChestPatch { get; set; }
     public DoubleChestPatch DChestPatch { get; set; }
     public LabeledChestPatch LChestPatch { get; set; }
 
-    // public GridRecipeLoader GridRecipeLoader { get; set; }
+    public override double ExecuteOrder() => 0.11;
 
     public override void AssetsLoaded(ICoreAPI api)
     {
-        var woodTypes = api.Assets
-            .Get<StandardWorldProperty>(new AssetLocation("worldproperties/block/wood.json")).Variants
-            .Select(x => x.Code.Path)
-            .ToArray()
-            .Append("aged")
-            .ToList();
-
-        var woodTypesCombined = woodTypes.SelectMany(_ => woodTypes, (first, second) => $"{first}-{second}").ToList();
+        var coreSys = api.ModLoader.GetModSystem<Core>();
+        var woodTypes = coreSys.WoodTypes;
+        var woodTypesCombined = coreSys.WoodTypesCombined;
 
         CChestPatch = new ChestPatch(woodTypes);
         DChestPatch = new DoubleChestPatch(woodTypes);
@@ -31,12 +23,6 @@ public class AdvancedPatches : ModSystem
 
     public override void AssetsFinalize(ICoreAPI api)
     {
-        // if (api.Side == EnumAppSide.Server)
-        // {
-        //     GridRecipeLoader = api.ModLoader.GetModSystem<GridRecipeLoader>();
-        //     // GridRecipeLoader.LoadRecipe(null, null);
-        // }
-
         for (int i = 0; i < api.World.Blocks.Count; i++)
         {
             switch (api.World.Blocks[i])
