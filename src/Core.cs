@@ -1,11 +1,10 @@
 using Vintagestory.API.Common;
 
-[assembly: ModInfo("Wood Chests",
-    Authors = new[] { "Craluminum2413" })]
+[assembly: ModInfo("Wood Chests")]
 
 namespace WoodChests
 {
-    class WoodChests : ModSystem
+    class Core : ModSystem
     {
         public override void Start(ICoreAPI api)
         {
