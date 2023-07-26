@@ -16,16 +16,16 @@ public static class TextureExtensions
     {
         var textureList = textures.ToDictionary(x => x.Key, y => y.Value).ToList();
 
-        foreach (var type in types)
+        for (int i = 0; i < types.Count; i++)
         {
-            for (int i = 0; i < textureList.Count; i++)
+            for (int j = 0; j < textureList.Count; j++)
             {
-                var key = textureList[i].Key;
-                var value = textureList[i].Value.Clone();
+                var key = textureList[j].Key;
+                var value = textureList[j].Value.Clone();
 
-                value.Base = new AssetLocation(value.Base.ToString().Replace("placeholder", type));
+                value.Base = new AssetLocation(value.Base.ToString().Replace("placeholder", types[i]));
 
-                textures.Add(key.Replace("placeholder", type), value);
+                textures.Add(key.Replace("placeholder", types[i]), value);
             }
         }
     }
