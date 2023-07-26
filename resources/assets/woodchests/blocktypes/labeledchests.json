@@ -14,7 +14,6 @@
     "behaviors": [{ "name": "Lockable" }, { "name": "Container" }],
     "entityBehaviors": [{ "name": "Animatable" }],
     "variantgroups": [{ "code": "side", "loadFromProperties": "game:abstract/horizontalorientation" }],
-
     "heldTpIdleAnimation": "holdunderarm",
     "shapeInventory": { "base": "woodchests:block/chest/normal-labeled", "rotateY": 270 },
     "shapeByType": {
@@ -24,10 +23,11 @@
         "*-south": { "rotateY": 180 }
     },
     "textures": {
+        // these are used to generate textures from all wood types
         "placeholder1-placeholder2-sides2": { "base": "game:block/wood/debarked/placeholder1", "overlays": ["block/chest/sides"] },
-        "placeholder1-placeholder2-lid": { "base": "game:block/wood/debarked/placeholder1", "overlays": ["game:block/transparent"] },
+        "placeholder1-placeholder2-lid": { "base": "game:block/wood/debarked/placeholder1" },
         "placeholder1-placeholder2-accessories": { "base": "game:block/wood/debarked/placeholder1", "overlays": ["block/chest/accessories"] },
-        "placeholder1-placeholder2-label": { "base": "game:block/wood/debarked/placeholder2", "overlays": ["game:block/transparent"] }
+        "placeholder1-placeholder2-label": { "base": "game:block/wood/debarked/placeholder2" }
     },
     "blockmaterial": "Wood",
     "replaceable": 900,
