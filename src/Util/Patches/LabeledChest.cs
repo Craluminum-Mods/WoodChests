@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace WoodChests;
 
-public class LabeledChestPatch : ChestPatch
+public class LabeledChest : Chest
 {
-    public LabeledChestPatch(List<string> types) : base(types)
+    public LabeledChest(List<string> types) : base(types)
     {
         DialogTitleLangCode = types.ToDictionary(key => key, _ => "chestcontents");
         QuantitySlots = types.ToDictionary(key => key, _ => 16);

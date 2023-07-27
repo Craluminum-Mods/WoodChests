@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace WoodChests;
 
-public class ChestPatch
+public class Chest
 {
     public List<string> Types { get; set; }
     public string DefaultType { get; set; }
@@ -17,7 +17,7 @@ public class ChestPatch
     public Dictionary<string, string> TypedOpenSound { get; set; }
     public Dictionary<string, string> TypedCloseSound { get; set; }
 
-    public ChestPatch(List<string> types)
+    public Chest(List<string> types)
     {
         Types = types;
         DefaultType = types[0];
