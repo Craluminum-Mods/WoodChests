@@ -3,25 +3,11 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
-using static WoodChests.TextureExtensions;
 
 namespace WoodChests
 {
     class BlockWoodLabeledChest : BlockGenericTypedContainer
     {
-        public override void OnCollectTextures(ICoreAPI api, ITextureLocationDictionary textureDict)
-        {
-            var types = this.GetTypes();
-            if (types == null)
-            {
-                base.OnCollectTextures(api, textureDict);
-                return;
-            }
-
-            GenerateTexturesForLabeledChest(ref Textures, types);
-            base.OnCollectTextures(api, textureDict);
-        }
-
         public override string GetHeldItemName(ItemStack itemStack)
         {
             return GetName(itemStack.Attributes.GetString("type"));
