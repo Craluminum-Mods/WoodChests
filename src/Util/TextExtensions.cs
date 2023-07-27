@@ -24,4 +24,14 @@ public static class TextExtensions
     {
         return new(JToken.Parse(text.ReplaceTwoPlaceholders(with)));
     }
+
+    public static JsonObject Parse(this string text)
+    {
+        return new(JToken.Parse(text));
+    }
+
+    public static string Q(string text) => '"' + text + '"';
+    public static string C(string text) => '{' + text + '}';
+    public static string R(string text) => '(' + text + ')';
+    public static string A(string text) => '[' + text + ']';
 }

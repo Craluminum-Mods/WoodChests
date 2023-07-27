@@ -22,7 +22,7 @@ public static class JsonPatchExtensions
             JsonPatch patch = patches[i];
 
             totalCount++;
-            loader.ApplyPatch(i, new AssetLocation(nameof(JsonPatches)), patch, ref appliedCount, ref notfoundCount, ref errorCount);
+            loader.ApplyPatch(i, new AssetLocation("WoodChests.JsonPatches"), patch, ref appliedCount, ref notfoundCount, ref errorCount);
         }
 
         StringBuilder sb = new();
