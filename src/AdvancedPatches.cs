@@ -12,9 +12,8 @@ public class AdvancedPatches : ModSystem
 
     public override void AssetsLoaded(ICoreAPI api)
     {
-        var coreSys = api.ModLoader.GetModSystem<Core>();
-        var woodTypes = coreSys.WoodTypes;
-        var woodTypesCombined = coreSys.WoodTypesCombined;
+        var woodTypes = api.GetTypesFromWorldProperties("worldproperties/block/wood.json", "aged");
+        var woodTypesCombined = woodTypes.CombineTypes();
 
         CChestPatch = new ChestPatch(woodTypes);
         DChestPatch = new DoubleChestPatch(woodTypes);
