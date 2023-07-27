@@ -23,11 +23,7 @@
         "*-south": { "rotateY": 180 }
     },
     "textures": {
-        // these are used to generate textures from all wood types
-        "placeholder1-placeholder2-sides2": { "base": "game:block/wood/debarked/placeholder1", "overlays": ["block/chest/sides"] },
-        "placeholder1-placeholder2-lid": { "base": "game:block/wood/debarked/placeholder1" },
-        "placeholder1-placeholder2-accessories": { "base": "game:block/wood/debarked/placeholder1", "overlays": ["block/chest/accessories"] },
-        "placeholder1-placeholder2-label": { "base": "game:block/wood/debarked/placeholder2" }
+        // populated by WoodChests.JsonPatches
     },
     "blockmaterial": "Wood",
     "replaceable": 900,
