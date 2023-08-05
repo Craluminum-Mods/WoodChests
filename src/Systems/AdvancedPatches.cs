@@ -1,4 +1,5 @@
 using Vintagestory.API.Common;
+using System.Collections.Generic;
 
 namespace WoodChests;
 
@@ -8,11 +9,14 @@ public class AdvancedPatches : ModSystem
     public DoubleChest DChest { get; set; }
     public LabeledChest LChest { get; set; }
 
-    public override double ExecuteOrder() => 0.11;
+    public override double ExecuteOrder()
+    {
+        return 0.11;
+    }
 
     public override void AssetsLoaded(ICoreAPI api)
     {
-        var woodTypes = api.GetTypesFromWorldProperties("worldproperties/block/wood.json", "aged");
+        List<string> woodTypes = api.GetTypesFromWorldProperties("worldproperties/block/wood.json", "aged");
 
         CChest = new Chest(woodTypes);
         DChest = new DoubleChest(woodTypes);

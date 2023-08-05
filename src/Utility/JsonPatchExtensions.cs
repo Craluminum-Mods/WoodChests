@@ -10,7 +10,7 @@ public static class JsonPatchExtensions
 {
     public static void ApplyJsonPatches(this ICoreAPI api, List<JsonPatch> patches)
     {
-        var loader = api.ModLoader.GetModSystem<ModJsonPatchLoader>();
+        ModJsonPatchLoader loader = api.ModLoader.GetModSystem<ModJsonPatchLoader>();
 
         int appliedCount = 0;
         int notfoundCount = 0;

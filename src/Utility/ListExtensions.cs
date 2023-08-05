@@ -16,9 +16,4 @@ public static class ListExtensions
             .Append(extraTypes)
             .ToList();
     }
-
-    public static List<string> CombineTypes(this List<string> types)
-    {
-        return types.SelectMany(x => types, (first, second) => $"{first}-{second}").ToList();
-    }
 }

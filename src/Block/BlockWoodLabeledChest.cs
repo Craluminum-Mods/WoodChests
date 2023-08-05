@@ -24,8 +24,8 @@ namespace WoodChests
 
         public string GetName(string type)
         {
-            var part = Lang.Get($"material-{type}");
-            var chest = Lang.GetMatching("game:block-normal-labeled-labeledchest-*");
+            string part = Lang.Get($"material-{type}");
+            string chest = Lang.GetMatching("game:block-normal-labeled-labeledchest-*");
             return string.Format($"{chest} ({part})");
         }
     }

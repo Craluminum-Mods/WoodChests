@@ -25,7 +25,7 @@ public static class CollectibleExtensions
 
     public static void AddToCreativeInventory(this CollectibleObject obj, IWorldAccessor world, List<string> types)
     {
-        var stacks = ObjectCacheUtil.GetOrCreate(world.Api, "creativeStacks-" + obj.Code, delegate
+        JsonItemStack[] stacks = ObjectCacheUtil.GetOrCreate(world.Api, "creativeStacks-" + obj.Code, delegate
         {
             return types.ConvertAll(type => obj.GenJstack(world, $"{{ type: \"{type}\"}}")).ToArray();
         });
@@ -38,7 +38,7 @@ public static class CollectibleExtensions
 
     public static JsonItemStack GenJstack(this CollectibleObject obj, IWorldAccessor world, string jsonAttributes)
     {
-        var jsonItemStack = new JsonItemStack
+        JsonItemStack jsonItemStack = new()
         {
             Code = obj.Code,
             Type = obj.ItemClass,

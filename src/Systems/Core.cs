@@ -12,6 +12,6 @@ public class Core : ModSystem
         api.RegisterBlockClass("WoodChests_BlockWoodChest", typeof(BlockWoodChest));
         api.RegisterBlockClass("WoodChests_BlockWoodLabeledChest", typeof(BlockWoodLabeledChest));
         api.RegisterBlockClass("WoodChests_BlockWoodTrunkChest", typeof(BlockWoodTrunkChest));
-        api.World.Logger.Event("started 'Wood Chests' mod");
+        api.World.Logger.Event("started '{0}' mod", Mod.Info.Name);
     }
 }
