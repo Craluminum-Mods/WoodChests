@@ -10,11 +10,6 @@ public class AdvancedPatches : ModSystem
     public DoubleChest DChest { get; set; }
     public LabeledChest LChest { get; set; }
 
-    public override double ExecuteOrder()
-    {
-        return 0.11;
-    }
-
     public override void AssetsLoaded(ICoreAPI api)
     {
         List<string> woodTypes = api.GetTypesFromWorldProperties("worldproperties/block/wood.json", "aged");
@@ -49,6 +44,8 @@ public class AdvancedPatches : ModSystem
                     }
                     break;
                 case BlockWoodLabeledChest:
+                    block.BlockEntityBehaviors = block.BlockEntityBehaviors.Append(new BlockEntityBehaviorType() { Name = "WoodChests:TwoZeroZero", properties = null });
+
                     block.ChangeAttribute(LChest.Types, "types");
                     block.ChangeAttribute(LChest.DefaultType, "defaultType");
                     block.ChangeAttribute(LChest.RotatatableInterval, "rotatatableInterval");
