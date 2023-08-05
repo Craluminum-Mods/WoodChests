@@ -10,7 +10,7 @@ public static class CollectibleExtensions
 {
     public static void ChangeAttribute(this CollectibleObject obj, object val, params string[] path)
     {
-        obj.Attributes ??= new JsonObject(new JObject());
+        obj.Attributes ??= new(new JObject());
 
         switch (path.Length)
         {
@@ -42,7 +42,7 @@ public static class CollectibleExtensions
         {
             Code = obj.Code,
             Type = obj.ItemClass,
-            Attributes = new JsonObject(JToken.Parse(jsonAttributes))
+            Attributes = new(JToken.Parse(jsonAttributes))
         };
         jsonItemStack.Resolve(world, "");
         return jsonItemStack;

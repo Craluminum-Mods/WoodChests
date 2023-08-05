@@ -99,7 +99,7 @@ public class Recipes : ModSystem
             Output = api.World.CreateIngredient(outputStack)
         };
 
-        recipe.Output.Attributes = new JsonObject(JToken.FromObject(new { type }));
+        recipe.Output.Attributes = new(JToken.FromObject(new { type }));
         recipe.Output.Resolve(api.World, "");
         recipe.ResolveIngredients(api.World);
         return recipe;
@@ -120,13 +120,13 @@ public class Recipes : ModSystem
                 {
                     Type = EnumItemClass.Block,
                     Code = new AssetLocation("woodchests:wchest-east"),
-                    Attributes = new JsonObject(JToken.FromObject(new { type }))
+                    Attributes = new(JToken.FromObject(new { type }))
                 }
             },
             Output = api.World.CreateIngredient(outputStack)
         };
 
-        recipe.Output.Attributes = new JsonObject(JToken.FromObject(new { type }));
+        recipe.Output.Attributes = new(JToken.FromObject(new { type }));
         recipe.Output.Resolve(api.World, "");
         recipe.ResolveIngredients(api.World);
         return recipe;
@@ -147,7 +147,7 @@ public class Recipes : ModSystem
                 {
                     Type = EnumItemClass.Block,
                     Code = new AssetLocation("woodchests:wchest-east"),
-                    Attributes = new JsonObject(JToken.FromObject(new { type }))
+                    Attributes = new(JToken.FromObject(new { type }))
                 },
                 ["S"] = new CraftingRecipeIngredient()
                 {
@@ -158,7 +158,7 @@ public class Recipes : ModSystem
             Output = api.World.CreateIngredient(outputStack)
         };
 
-        recipe.Output.Attributes = new JsonObject(JToken.FromObject(new { type }));
+        recipe.Output.Attributes = new(JToken.FromObject(new { type }));
         recipe.Output.Resolve(api.World, "");
         recipe.ResolveIngredients(api.World);
         return recipe;
@@ -180,7 +180,7 @@ public class Recipes : ModSystem
                 {
                     Type = EnumItemClass.Block,
                     Code = new AssetLocation("woodchests:wchest-east"),
-                    Attributes = new JsonObject(JToken.FromObject(new { type }))
+                    Attributes = new(JToken.FromObject(new { type }))
                 },
                 ["S"] = new CraftingRecipeIngredient()
                 {
@@ -191,7 +191,7 @@ public class Recipes : ModSystem
             Output = api.World.CreateIngredient(outputStack)
         };
 
-        recipe.Output.Attributes = new JsonObject(JToken.FromObject(new { type }));
+        recipe.Output.Attributes = new(JToken.FromObject(new { type }));
         recipe.Output.Resolve(api.World, "");
         recipe.ResolveIngredients(api.World);
         return recipe;
@@ -214,7 +214,7 @@ public class Recipes : ModSystem
                 {
                     Type = EnumItemClass.Block,
                     Code = new AssetLocation("woodchests:wtrunk-east"),
-                    Attributes = new JsonObject(JToken.FromObject(new { type }))
+                    Attributes = new(JToken.FromObject(new { type }))
                 },
                 ["T"] = new CraftingRecipeIngredient()
                 {
@@ -227,7 +227,7 @@ public class Recipes : ModSystem
         };
 
         recipe.Output.Quantity = 2;
-        recipe.Output.Attributes = new JsonObject(JToken.FromObject(new { type }));
+        recipe.Output.Attributes = new(JToken.FromObject(new { type }));
         recipe.Output.Resolve(api.World, "");
         recipe.ResolveIngredients(api.World);
         return recipe;
@@ -252,7 +252,7 @@ public class Recipes : ModSystem
                     Type = EnumItemClass.Block,
                     Code = new AssetLocation("woodchests:wlabeledchest-east"),
                     ReturnedStack = returnedStack,
-                    Attributes = new JsonObject(JToken.FromObject(new { type }))
+                    Attributes = new(JToken.FromObject(new { type }))
                 },
                 ["T"] = new CraftingRecipeIngredient()
                 {
@@ -264,7 +264,7 @@ public class Recipes : ModSystem
             Output = api.World.CreateIngredient(outputStack)
         };
 
-        recipe.Output.Attributes = new JsonObject(JToken.FromObject(new { type }));
+        recipe.Output.Attributes = new(JToken.FromObject(new { type }));
         recipe.Output.Resolve(api.World, "");
         recipe.ResolveIngredients(api.World);
         return recipe;
