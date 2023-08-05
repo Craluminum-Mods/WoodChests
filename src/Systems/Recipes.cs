@@ -164,11 +164,7 @@ public class Recipes : ModSystem
         return recipe;
     }
 
-    /// <summary>
-    /// From Vanilla Variants signs
-    /// </summary>
-    /// <param name="api"></param>
-    /// <param name="type"></param>
+    /// <summary>From Vanilla Variants signs</summary>
     private static GridRecipe CreateChestLabeledRecipe2(ICoreAPI api, string type)
     {
         ItemStack outputStack = new(api.World.GetBlock(new AssetLocation("woodchests:wlabeledchest-east")));
@@ -203,7 +199,7 @@ public class Recipes : ModSystem
 
     private static GridRecipe CreateTrunkRecycleRecipe(ICoreAPI api, string type)
     {
-        ItemStack outputStack = new(api.World.GetBlock(blockCode: new AssetLocation("woodchests:wchest-east")), stacksize: 2);
+        ItemStack outputStack = new(api.World.GetBlock(new AssetLocation("woodchests:wchest-east")));
 
         GridRecipe recipe = new()
         {
@@ -230,7 +226,7 @@ public class Recipes : ModSystem
             Output = api.World.CreateIngredient(outputStack)
         };
 
-        // recipe.Output.Quantity = 2;
+        recipe.Output.Quantity = 2;
         recipe.Output.Attributes = new JsonObject(JToken.FromObject(new { type }));
         recipe.Output.Resolve(api.World, "");
         recipe.ResolveIngredients(api.World);
