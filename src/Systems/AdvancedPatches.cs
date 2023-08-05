@@ -1,5 +1,6 @@
 using Vintagestory.API.Common;
 using System.Collections.Generic;
+using Vintagestory.API.Util;
 
 namespace WoodChests;
 
@@ -25,64 +26,64 @@ public class AdvancedPatches : ModSystem
 
     public override void AssetsFinalize(ICoreAPI api)
     {
-        for (int i = 0; i < api.World.Blocks.Count; i++)
+        foreach (var block in api.World.Blocks)
         {
-            switch (api.World.Blocks[i])
+            switch (block)
             {
                 case BlockWoodChest:
-                    api.World.Blocks[i].ChangeAttribute(CChest.Types, "types");
-                    api.World.Blocks[i].ChangeAttribute(CChest.DefaultType, "defaultType");
-                    api.World.Blocks[i].ChangeAttribute(CChest.RotatatableInterval, "rotatatableInterval");
-                    api.World.Blocks[i].ChangeAttribute(CChest.Drop, "drop");
-                    api.World.Blocks[i].ChangeAttribute(CChest.QuantitySlots, "quantitySlots");
-                    api.World.Blocks[i].ChangeAttribute(CChest.DialogTitleLangCode, "dialogTitleLangCode");
-                    api.World.Blocks[i].ChangeAttribute(CChest.StorageType, "storageType");
-                    api.World.Blocks[i].ChangeAttribute(CChest.RetrieveOnly, "retrieveOnly");
-                    api.World.Blocks[i].ChangeAttribute(CChest.Shape, "shape");
-                    api.World.Blocks[i].ChangeAttribute(CChest.TypedOpenSound, "typedOpenSound");
-                    api.World.Blocks[i].ChangeAttribute(CChest.TypedCloseSound, "typedCloseSound");
+                    block.ChangeAttribute(CChest.Types, "types");
+                    block.ChangeAttribute(CChest.DefaultType, "defaultType");
+                    block.ChangeAttribute(CChest.RotatatableInterval, "rotatatableInterval");
+                    block.ChangeAttribute(CChest.Drop, "drop");
+                    block.ChangeAttribute(CChest.QuantitySlots, "quantitySlots");
+                    block.ChangeAttribute(CChest.DialogTitleLangCode, "dialogTitleLangCode");
+                    block.ChangeAttribute(CChest.StorageType, "storageType");
+                    block.ChangeAttribute(CChest.RetrieveOnly, "retrieveOnly");
+                    block.ChangeAttribute(CChest.Shape, "shape");
+                    block.ChangeAttribute(CChest.TypedOpenSound, "typedOpenSound");
+                    block.ChangeAttribute(CChest.TypedCloseSound, "typedCloseSound");
 
-                    if (api.World.Blocks[i].Variant["side"] == "east")
+                    if (block.Variant["side"] == "east")
                     {
-                        api.World.Blocks[i].AddToCreativeInventory(api.World, CChest.Types);
+                        block.AddToCreativeInventory(api.World, CChest.Types);
                     }
                     break;
                 case BlockWoodLabeledChest:
-                    api.World.Blocks[i].ChangeAttribute(LChest.Types, "types");
-                    api.World.Blocks[i].ChangeAttribute(LChest.DefaultType, "defaultType");
-                    api.World.Blocks[i].ChangeAttribute(LChest.RotatatableInterval, "rotatatableInterval");
-                    api.World.Blocks[i].ChangeAttribute(LChest.Drop, "drop");
-                    api.World.Blocks[i].ChangeAttribute(LChest.QuantitySlots, "quantitySlots");
-                    api.World.Blocks[i].ChangeAttribute(LChest.DialogTitleLangCode, "dialogTitleLangCode");
-                    api.World.Blocks[i].ChangeAttribute(LChest.StorageType, "storageType");
-                    api.World.Blocks[i].ChangeAttribute(LChest.RetrieveOnly, "retrieveOnly");
-                    api.World.Blocks[i].ChangeAttribute(LChest.Shape, "shape");
-                    api.World.Blocks[i].ChangeAttribute(LChest.TypedOpenSound, "typedOpenSound");
-                    api.World.Blocks[i].ChangeAttribute(LChest.TypedCloseSound, "typedCloseSound");
+                    block.ChangeAttribute(LChest.Types, "types");
+                    block.ChangeAttribute(LChest.DefaultType, "defaultType");
+                    block.ChangeAttribute(LChest.RotatatableInterval, "rotatatableInterval");
+                    block.ChangeAttribute(LChest.Drop, "drop");
+                    block.ChangeAttribute(LChest.QuantitySlots, "quantitySlots");
+                    block.ChangeAttribute(LChest.DialogTitleLangCode, "dialogTitleLangCode");
+                    block.ChangeAttribute(LChest.StorageType, "storageType");
+                    block.ChangeAttribute(LChest.RetrieveOnly, "retrieveOnly");
+                    block.ChangeAttribute(LChest.Shape, "shape");
+                    block.ChangeAttribute(LChest.TypedOpenSound, "typedOpenSound");
+                    block.ChangeAttribute(LChest.TypedCloseSound, "typedCloseSound");
 
-                    if (api.World.Blocks[i].Variant["side"] == "east")
+                    if (block.Variant["side"] == "east")
                     {
-                        api.World.Blocks[i].AddToCreativeInventory(api.World, LChest.Types);
+                        block.AddToCreativeInventory(api.World, LChest.Types);
                     }
                     break;
                 case BlockWoodTrunkChest:
-                    api.World.Blocks[i].ChangeAttribute(DChest.Types, "types");
-                    api.World.Blocks[i].ChangeAttribute(DChest.DefaultType, "defaultType");
-                    api.World.Blocks[i].ChangeAttribute(DChest.RotatatableInterval, "rotatatableInterval");
-                    api.World.Blocks[i].ChangeAttribute(DChest.Drop, "drop");
-                    api.World.Blocks[i].ChangeAttribute(DChest.QuantitySlots, "quantitySlots");
-                    api.World.Blocks[i].ChangeAttribute(DChest.DialogTitleLangCode, "dialogTitleLangCode");
-                    api.World.Blocks[i].ChangeAttribute(DChest.StorageType, "storageType");
-                    api.World.Blocks[i].ChangeAttribute(DChest.RetrieveOnly, "retrieveOnly");
-                    api.World.Blocks[i].ChangeAttribute(DChest.Shape, "shape");
-                    api.World.Blocks[i].ChangeAttribute(DChest.TypedOpenSound, "typedOpenSound");
-                    api.World.Blocks[i].ChangeAttribute(DChest.TypedCloseSound, "typedCloseSound");
+                    block.ChangeAttribute(DChest.Types, "types");
+                    block.ChangeAttribute(DChest.DefaultType, "defaultType");
+                    block.ChangeAttribute(DChest.RotatatableInterval, "rotatatableInterval");
+                    block.ChangeAttribute(DChest.Drop, "drop");
+                    block.ChangeAttribute(DChest.QuantitySlots, "quantitySlots");
+                    block.ChangeAttribute(DChest.DialogTitleLangCode, "dialogTitleLangCode");
+                    block.ChangeAttribute(DChest.StorageType, "storageType");
+                    block.ChangeAttribute(DChest.RetrieveOnly, "retrieveOnly");
+                    block.ChangeAttribute(DChest.Shape, "shape");
+                    block.ChangeAttribute(DChest.TypedOpenSound, "typedOpenSound");
+                    block.ChangeAttribute(DChest.TypedCloseSound, "typedCloseSound");
 
-                    api.World.Blocks[i].ChangeAttribute(DChest.QuantityColumns, "quantityColumns");
+                    block.ChangeAttribute(DChest.QuantityColumns, "quantityColumns");
 
-                    if (api.World.Blocks[i].Variant["side"] == "east")
+                    if (block.Variant["side"] == "east")
                     {
-                        api.World.Blocks[i].AddToCreativeInventory(api.World, DChest.Types);
+                        block.AddToCreativeInventory(api.World, DChest.Types);
                     }
                     break;
             }
