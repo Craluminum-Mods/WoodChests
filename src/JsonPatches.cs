@@ -20,11 +20,10 @@ public class JsonPatches : ModSystem
     private List<JsonPatch> CreatePatches(ICoreAPI api)
     {
         var woodTypes = api.GetTypesFromWorldProperties("worldproperties/block/wood.json", "aged");
-        var woodTypesCombined = woodTypes.CombineTypes();
 
-        var woodChest = new AssetLocation("woodchests:blocktypes/chests.json");
-        var woodDoubleChest = new AssetLocation("woodchests:blocktypes/trunks.json");
-        var woodLabeledChest = new AssetLocation("woodchests:blocktypes/labeledchests.json");
+        var woodChest = new AssetLocation("woodchests:blocktypes/chest.json");
+        var woodDoubleChest = new AssetLocation("woodchests:blocktypes/chest-trunk.json");
+        var woodLabeledChest = new AssetLocation("woodchests:blocktypes/chest-labeled.json");
 
         List<JsonPatch> patches = new();
 
@@ -36,22 +35,22 @@ public class JsonPatches : ModSystem
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"", ""overlays"": [""block/chest/sides""] }".ParseAndReplacePlaceholder(woodTypes[i]),
-                    Path = "/textures/placeholder1-sides2".ReplacePlaceholder(woodTypes[i]),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"", ""overlays"": [""block/chest/sides""] }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-sides2".ReplacePlaceholder(woodTypes[i]),
                     File = woodChest
                 });
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"" }".ParseAndReplacePlaceholder(woodTypes[i]),
-                    Path = "/textures/placeholder1-lid".ReplacePlaceholder(woodTypes[i]),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"" }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-lid".ReplacePlaceholder(woodTypes[i]),
                     File = woodChest
                 });
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"", ""overlays"": [""block/chest/accessories""] }".ParseAndReplacePlaceholder(woodTypes[i]),
-                    Path = "/textures/placeholder1-accessories".ReplacePlaceholder(woodTypes[i]),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"", ""overlays"": [""block/chest/accessories""] }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-accessories".ReplacePlaceholder(woodTypes[i]),
                     File = woodChest
                 });
             }
@@ -65,36 +64,36 @@ public class JsonPatches : ModSystem
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"", ""overlays"": [""block/trunk/right-side""] }".ParseAndReplacePlaceholder(woodTypes[i]),
-                    Path = "/textures/placeholder1-right-side".ReplacePlaceholder(woodTypes[i]),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"", ""overlays"": [""block/trunk/right-side""] }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-right-side".ReplacePlaceholder(woodTypes[i]),
                     File = woodDoubleChest
                 });
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"", ""overlays"": [""block/chest/sides""] }".ParseAndReplacePlaceholder(woodTypes[i]),
-                    Path = "/textures/placeholder1-sides2".ReplacePlaceholder(woodTypes[i]),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"", ""overlays"": [""block/chest/sides""] }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-sides2".ReplacePlaceholder(woodTypes[i]),
                     File = woodDoubleChest
                 });
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"" }".ParseAndReplacePlaceholder(woodTypes[i]),
-                    Path = "/textures/placeholder1-lid".ReplacePlaceholder(woodTypes[i]),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"" }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-lid".ReplacePlaceholder(woodTypes[i]),
                     File = woodDoubleChest
                 });
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"", ""overlays"": [""block/chest/accessories""] }".ParseAndReplacePlaceholder(woodTypes[i]),
-                    Path = "/textures/placeholder1-accessories".ReplacePlaceholder(woodTypes[i]),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"", ""overlays"": [""block/chest/accessories""] }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-accessories".ReplacePlaceholder(woodTypes[i]),
                     File = woodDoubleChest
                 });
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"", ""overlays"": [""block/trunk/left-side""] }".ParseAndReplacePlaceholder(woodTypes[i]),
-                    Path = "/textures/placeholder1-left-side".ReplacePlaceholder(woodTypes[i]),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"", ""overlays"": [""block/trunk/left-side""] }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-left-side".ReplacePlaceholder(woodTypes[i]),
                     File = woodDoubleChest
                 });
             }
@@ -102,42 +101,35 @@ public class JsonPatches : ModSystem
             {
                 api.Logger.Error("WoodChests: Failed to patch file {0}: {1}", woodDoubleChest, e);
             }
-        }
-        api.Logger.Debug("WoodChests: {0} took {1} ms", nameof(CreatePatches) + " for chest and doublechest", Environment.TickCount - TickCount1);
-
-        var TickCount2 = Environment.TickCount;
-        for (int i = 0; i < woodTypesCombined.Count; i++)
-        {
-            var twoTypes = woodTypesCombined[i].Split('-');
 
             try
             {
-                patches.Add(new JsonPatch()
+            patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"", ""overlays"": [""block/chest/sides""] }".ParseAndReplaceTwoPlaceholders(twoTypes),
-                    Path = "/textures/placeholder1-placeholder2-sides2".ReplaceTwoPlaceholders(twoTypes),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"", ""overlays"": [""block/chest/sides""] }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-sides2".ReplacePlaceholder(woodTypes[i]),
                     File = woodLabeledChest
                 });
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"" }".ParseAndReplaceTwoPlaceholders(twoTypes),
-                    Path = "/textures/placeholder1-placeholder2-lid".ReplaceTwoPlaceholders(twoTypes),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"" }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-lid".ReplacePlaceholder(woodTypes[i]),
                     File = woodLabeledChest
                 });
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder1"", ""overlays"": [""block/chest/accessories""] }".ParseAndReplaceTwoPlaceholders(twoTypes),
-                    Path = "/textures/placeholder1-placeholder2-accessories".ReplaceTwoPlaceholders(twoTypes),
+                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder"", ""overlays"": [""block/chest/accessories""] }".ParseAndReplacePlaceholder(woodTypes[i]),
+                    Path = "/textures/placeholder-accessories".ReplacePlaceholder(woodTypes[i]),
                     File = woodLabeledChest
                 });
                 patches.Add(new JsonPatch()
                 {
                     Op = EnumJsonPatchOp.Add,
-                    Value = @"{ ""base"": ""game:block/wood/debarked/placeholder2"" }".ParseAndReplaceTwoPlaceholders(twoTypes),
-                    Path = "/textures/placeholder1-placeholder2-label".ReplaceTwoPlaceholders(twoTypes),
+                    Value = @"{ ""base"": ""game:block/wood/chest/label"" }".Parse(),
+                    Path = "/textures/placeholder-label".ReplacePlaceholder(woodTypes[i]),
                     File = woodLabeledChest
                 });
             }
@@ -146,8 +138,7 @@ public class JsonPatches : ModSystem
                 api.Logger.Error("WoodChests: Failed to patch file {0}: {1}", woodLabeledChest, e);
             }
         }
-        api.Logger.Debug("WoodChests: {0} took {1} ms", nameof(CreatePatches) + " for labeledchest", Environment.TickCount - TickCount2);
-
+        api.Logger.Debug("WoodChests: {0} took {1} ms", nameof(CreatePatches) + " for chest, doublechest and labeled chest", Environment.TickCount - TickCount1);
         return patches;
     }
 }

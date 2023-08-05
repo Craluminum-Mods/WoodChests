@@ -13,11 +13,10 @@ public class AdvancedPatches : ModSystem
     public override void AssetsLoaded(ICoreAPI api)
     {
         var woodTypes = api.GetTypesFromWorldProperties("worldproperties/block/wood.json", "aged");
-        var woodTypesCombined = woodTypes.CombineTypes();
 
         CChest = new Chest(woodTypes);
         DChest = new DoubleChest(woodTypes);
-        LChest = new LabeledChest(woodTypesCombined);
+        LChest = new LabeledChest(woodTypes);
     }
 
     public override void AssetsFinalize(ICoreAPI api)

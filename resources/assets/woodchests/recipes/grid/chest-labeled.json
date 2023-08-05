@@ -2,14 +2,14 @@
   {
     "ingredientPattern": "S,C",
     "ingredients": {
-      "S": { "type": "block", "code": "vanvar:sign-*-ground-north", "name": "swood" },
+      "S": { "type": "block", "code": "vanvar:sign-*-ground-north" },
       "C": { "type": "block", "code": "wchest-east", "attributes": { "type": "acacia" } }
     },
     "recipeGroup": 2,
     "shapeless": true,
     "width": 1,
     "height": 2,
-    "output": { "type": "block", "code": "wlabeledchest-east", "attributes": { "type": "acacia-{swood}" } }
+    "output": { "type": "block", "code": "wlabeledchest-east", "attributes": { "type": "acacia" } }
   },
   {
     "ingredientPattern": "S,C",
